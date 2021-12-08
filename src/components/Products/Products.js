@@ -16,10 +16,10 @@ const Products = ({ products }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return {
-    products: state.shop.products,
-  };
-};
+const mapStateToProps = state => {
+  return{
+    products: state.shop.products
+  }
+}
 
 export default connect(mapStateToProps)(Products);

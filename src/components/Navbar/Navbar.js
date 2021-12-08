@@ -36,10 +36,11 @@ const Navbar = ({ cart }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     cart: state.shop.cart,
   };
-};
+}
+;
 
 export default connect(mapStateToProps)(Navbar);

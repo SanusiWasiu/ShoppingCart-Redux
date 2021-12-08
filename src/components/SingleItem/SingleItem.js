@@ -4,21 +4,21 @@ import styles from "./SingleItem.module.css";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/Shopping/shopping-actions";
 
-const SingleItem = ({ current, addToCart }) => {
+const SingleItem = ({ currentItem, addToCart }) => {
   return (
     <div className={styles.singleItem}>
       <img
         className={styles.singleItem__image}
-        src={current.image}
-        alt={current.title}
+        src={currentItem.image}
+        alt={currentItem.title}
       />
       <div className={styles.singleItem__details}>
-        <p className={styles.details__title}>{current.title}</p>
-        <p className={styles.details__description}>{current.description}</p>
-        <p className={styles.details__price}>$ {current.price}</p>
+        <p className={styles.details__title}>{currentItem.title}</p>
+        <p className={styles.details__description}>{currentItem.description}</p>
+        <p className={styles.details__price}>$ {currentItem.price}</p>
 
         <button
-          onClick={() => addToCart(current.id)}
+          onClick={() => addToCart(currentItem.id)}
           className={styles.details__addBtn}
         >
           Add To Cart
@@ -30,7 +30,7 @@ const SingleItem = ({ current, addToCart }) => {
 
 const mapStateToProps = (state) => {
   return {
-    current: state.shop.currentItem,
+    currentItem: state.shop.currentItem,
   };
 };
 
